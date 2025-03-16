@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "sscript",
+      "camelcase": "Sscript",
+      "title": "Sscript",
+      "scope": "source.sscript",
+      "file-types": [
+        "sscript"
+      ],
+      "injection-regex": "^sscript$",
+      "class-name": "TreeSitterSscript"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A Parser for Story Script",
+    "authors": [
+      {
+        "name": "Chaitanya S",
+        "email": "seschaitanya535@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Schaitanya535/tree-sitter-sscript"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
