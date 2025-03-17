@@ -25,8 +25,15 @@
   - Character.
     - Name.
     - Dialogue.
+      - Lines
+      - Paragraphs
+      - Phrases
     - Parenthetical.
+      - Phrase
   - Action.
+      - Pragraphs
+      - Lines
+      - Phrases
   - Description.
   - Transition.
 - Montage. (A series of shots, can just be called as scene, could have multiple transitions.)
@@ -34,7 +41,9 @@
   - Action.
   - Description.
   - Transition.
-
+- Pragraph
+  - Lines
+  - Phrases
 
 ## A Story bible is made up of the following elements:
 
