@@ -44,6 +44,14 @@
         {
           "type": "dialogue",
           "named": true
+        },
+        {
+          "type": "slug",
+          "named": true
+        },
+        {
+          "type": "transition",
+          "named": true
         }
       ]
     }
@@ -116,14 +124,6 @@
       "types": [
         {
           "type": "block",
-          "named": true
-        },
-        {
-          "type": "slug",
-          "named": true
-        },
-        {
-          "type": "transition",
           "named": true
         }
       ]
@@ -220,10 +220,6 @@
     "named": false
   },
   {
-    "type": " TO:",
-    "named": false
-  },
-  {
     "type": "(",
     "named": false
   },
@@ -232,7 +228,15 @@
     "named": false
   },
   {
+    "type": "---}",
+    "named": false
+  },
+  {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ":: ",
     "named": false
   },
   {
@@ -302,5 +306,9 @@
   {
     "type": "name",
     "named": true
+  },
+  {
+    "type": "{---",
+    "named": false
   }
 ]

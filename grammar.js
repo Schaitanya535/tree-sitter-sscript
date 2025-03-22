@@ -12,13 +12,11 @@ module.exports = grammar({
 
 
   rules: {
-    source_file: ($) => repeat(seq($.scene)),
-    // scene: ($) => seq($.slug, repeat1("\n"), repeat1(seq($.block, repeat("\n"))), $.transition, repeat1("\n")),
-    // scene: ($) => seq("{", repeat1("\n"), repeat1(seq($.block, repeat("\n"))), "}", repeat1("\n")),
-    scene: ($) => seq($.slug, repeat1(seq($.block, repeat("\n"))), $.transition, repeat1("\n")),
-    block: ($) => choice($.dialogue, $.action),
-    slug: ($) => seq($.int_ext_indicator, " ", $.location, optional(seq(" - ", $.additional_specifier)), " - ", $.time, "\n"),
-    transition: ($) => seq(":", $.transition_name, " TO:", "\n"),
+    source_file: ($) => repeat($.scene),
+    scene: ($) => seq("{---", "\n", repeat1(seq($.block, repeat("\n"))), "---}"),
+    block: ($) => choice($.slug, $.transition, $.dialogue, $.action),
+    slug: ($) => seq(":: ", $.int_ext_indicator, " ", $.location, optional(seq(" - ", $.additional_specifier)), " - ", $.time, "\n"),
+    transition: ($) => seq(":", $.transition_name, ":", "\n"),
     action: ($) => seq($.line, "\n"),
     dialogue: ($) =>
       seq(
@@ -39,6 +37,8 @@ module.exports = grammar({
     time: ($) => choice("DAY", "NIGHT", "MORNING", "AFTERNOON", "EVENING", "DUSK", "DAWN", "LATE NIGHT", "MIDNIGHT", "NOON"),
     additional_specifier: ($) => $.name,
     transition_name: ($) => $.name,
+    extras: ($) => seq(/\s/, $.comment),
+    comment: () => /#.*/,
   },
 });
 
