@@ -34,11 +34,6 @@
     }
   },
   {
-    "type": "character_name",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "dialogue",
     "named": true,
     "fields": {},
@@ -56,21 +51,6 @@
         },
         {
           "type": "dialogue_paranthesis",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "dialogue_line",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "line",
           "named": true
         }
       ]
@@ -137,6 +117,14 @@
   {
     "type": "---}",
     "named": false
+  },
+  {
+    "type": "character_name",
+    "named": true
+  },
+  {
+    "type": "dialogue_line",
+    "named": true
   },
   {
     "type": "identifier",

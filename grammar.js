@@ -24,12 +24,12 @@ module.exports = grammar({
         $.dialogue_line,
         "\n"
       ),
-    character_name: ($) => /[A-Z \.]+/,
+    character_name: () => /[A-Z \.]+/,
     dialogue_paranthesis: ($) => seq("(", $.identifier, ")"),
-    dialogue_line: ($) => $.line,
-    string: ($) => /"[^"]*"/,
-    line: ($) => /[^\n]+/,
-    identifier: ($) => /[a-z]+/,
+    dialogue_line: () => /[^(\n][^\n]*[^)\n]/,
+    string: () => /"[^"]*"/,
+    line: () => /[^\n]+/,
+    identifier: () => /[a-z]+/,
   },
 });
 

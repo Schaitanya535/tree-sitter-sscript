@@ -118,13 +118,8 @@
       ]
     },
     "character_name": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "PATTERN",
-          "value": "[A-Z \\.]+"
-        }
-      ]
+      "type": "PATTERN",
+      "value": "[A-Z \\.]+"
     },
     "dialogue_paranthesis": {
       "type": "SEQ",
@@ -144,8 +139,8 @@
       ]
     },
     "dialogue_line": {
-      "type": "SYMBOL",
-      "name": "line"
+      "type": "PATTERN",
+      "value": "[^(\\n][^\\n]*[^)\\n]"
     },
     "string": {
       "type": "PATTERN",
