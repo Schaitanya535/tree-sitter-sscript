@@ -10,27 +10,24 @@
 module.exports = grammar({
   name: "sscript",
 
+
   rules: {
-    source_file: ($) => repeat($._definition),
-    _definition: ($) => choice(repeat($.scene)),
-    // act: ($) => seq("Act", $.identifier, $.block),
-    // chapter: ($) => seq("Chapter", $.identifier, $.block),
-    // transition: ($) => seq("Transition", $.identifier, $.identifier),
-    // dialogue: ($) => seq("Dialogue", $.identifier, $.string),
-    // block: ($) => seq(repeat($.statement)),
-    statement: ($) => choice($.dialogue, $.scene),
-    scene: ($) => seq(repeat(choice($.action, $.dialogue))),
-    action: ($) => seq($.identifier, $.string),
+    source_file: ($) => repeat($.scene),
+    scene: ($) => seq("{---", "\n", repeat1($.block), "\n", "---}", "\n"),
+    block: ($) => choice($.dialogue, $.action),
+    action: ($) => seq($.line, "\n"),
     dialogue: ($) =>
       seq(
         $.character_name,
         optional($.character_parenthesis),
         $.character_dialogue,
       ),
-    character_name: ($) => /[A-Z][a-z]+/,
-    character_parenthesis: ($) => seq("(", $.identifier, ")"),
-    character_dialogue: ($) => $.string,
+    character_name: ($) => seq(/[A-Z]+/, "\n"),
+    character_parenthesis: ($) => seq("(", $.identifier, ")", "\n"),
+    character_dialogue: ($) => seq($.string, "\n"),
     string: ($) => /"[^"]*"/,
+    line: ($) => /[^\n]+/,
     identifier: ($) => /[a-z]+/,
   },
 });
+
