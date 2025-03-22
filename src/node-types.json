@@ -34,7 +34,35 @@
     }
   },
   {
-    "type": "character_dialogue",
+    "type": "character_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "dialogue",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "character_name",
+          "named": true
+        },
+        {
+          "type": "dialogue_line",
+          "named": true
+        },
+        {
+          "type": "dialogue_paranthesis",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dialogue_line",
     "named": true,
     "fields": {},
     "children": {
@@ -49,12 +77,7 @@
     }
   },
   {
-    "type": "character_name",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "character_parenthesis",
+    "type": "dialogue_paranthesis",
     "named": true,
     "fields": {},
     "children": {
@@ -63,29 +86,6 @@
       "types": [
         {
           "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "dialogue",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "character_dialogue",
-          "named": true
-        },
-        {
-          "type": "character_name",
-          "named": true
-        },
-        {
-          "type": "character_parenthesis",
           "named": true
         }
       ]

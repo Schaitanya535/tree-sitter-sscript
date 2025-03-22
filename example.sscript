@@ -1,5 +1,6 @@
 
 {--- 
+
 JOHN
 "I can't believe this is happening."
 
@@ -17,6 +18,7 @@ SARAH
 ---}
 
 {---
+
 MR. SMITH
 "What brings you to my humble abode?"
 
@@ -24,5 +26,14 @@ MR. SMITH
 
 MRS. BROWN
 "We're here for the truth, Mr. Smith."
+
 ---}
 
+{---
+
+                       MR. CHARACTER
+                       "Hello, how are you?"
+
+*An action happens here.*
+
+---}

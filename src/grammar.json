@@ -87,7 +87,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "character_parenthesis"
+              "name": "dialogue_paranthesis"
             },
             {
               "type": "BLANK"
@@ -96,7 +96,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "character_dialogue"
+          "name": "dialogue_line"
         }
       ]
     },
@@ -105,7 +105,7 @@
       "members": [
         {
           "type": "PATTERN",
-          "value": "[A-Z]+"
+          "value": "[A-Z \\.]+"
         },
         {
           "type": "STRING",
@@ -113,7 +113,7 @@
         }
       ]
     },
-    "character_parenthesis": {
+    "dialogue_paranthesis": {
       "type": "SEQ",
       "members": [
         {
@@ -134,7 +134,7 @@
         }
       ]
     },
-    "character_dialogue": {
+    "dialogue_line": {
       "type": "SEQ",
       "members": [
         {
