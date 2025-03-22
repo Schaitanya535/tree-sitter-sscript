@@ -13,7 +13,7 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) => repeat($.scene),
-    scene: ($) => seq("{---", "\n", repeat1($.block), "\n", "---}", "\n"),
+    scene: ($) => seq("{---", "\n", repeat1(seq($.block, repeat("\n"))), "---}", "\n"),
     block: ($) => choice($.dialogue, $.action),
     action: ($) => seq($.line, "\n"),
     dialogue: ($) =>

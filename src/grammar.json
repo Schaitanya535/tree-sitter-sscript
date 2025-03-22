@@ -23,13 +23,21 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "SYMBOL",
-            "name": "block"
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "STRING",
+                  "value": "\n"
+                }
+              }
+            ]
           }
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
         },
         {
           "type": "STRING",
