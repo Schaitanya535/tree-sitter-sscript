@@ -15,6 +15,21 @@
     }
   },
   {
+    "type": "additional_specifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -42,15 +57,15 @@
       "required": true,
       "types": [
         {
-          "type": "character_name",
-          "named": true
-        },
-        {
           "type": "dialogue_line",
           "named": true
         },
         {
           "type": "dialogue_paranthesis",
+          "named": true
+        },
+        {
+          "type": "name",
           "named": true
         }
       ]
@@ -72,6 +87,26 @@
     }
   },
   {
+    "type": "int_ext_indicator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "location",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "scene",
     "named": true,
     "fields": {},
@@ -81,6 +116,41 @@
       "types": [
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "slug",
+          "named": true
+        },
+        {
+          "type": "transition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "slug",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "additional_specifier",
+          "named": true
+        },
+        {
+          "type": "int_ext_indicator",
+          "named": true
+        },
+        {
+          "type": "location",
+          "named": true
+        },
+        {
+          "type": "time",
           "named": true
         }
       ]
@@ -103,7 +173,54 @@
     }
   },
   {
+    "type": "time",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "transition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "transition_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "transition_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\n",
+    "named": false
+  },
+  {
+    "type": " ",
+    "named": false
+  },
+  {
+    "type": " - ",
+    "named": false
+  },
+  {
+    "type": " TO:",
     "named": false
   },
   {
@@ -115,12 +232,60 @@
     "named": false
   },
   {
-    "type": "---}",
+    "type": ":",
     "named": false
   },
   {
-    "type": "character_name",
-    "named": true
+    "type": "AFTERNOON",
+    "named": false
+  },
+  {
+    "type": "DAWN",
+    "named": false
+  },
+  {
+    "type": "DAY",
+    "named": false
+  },
+  {
+    "type": "DUSK",
+    "named": false
+  },
+  {
+    "type": "EVENING",
+    "named": false
+  },
+  {
+    "type": "EXT.",
+    "named": false
+  },
+  {
+    "type": "INT.",
+    "named": false
+  },
+  {
+    "type": "INT./EXT.",
+    "named": false
+  },
+  {
+    "type": "LATE NIGHT",
+    "named": false
+  },
+  {
+    "type": "MIDNIGHT",
+    "named": false
+  },
+  {
+    "type": "MORNING",
+    "named": false
+  },
+  {
+    "type": "NIGHT",
+    "named": false
+  },
+  {
+    "type": "NOON",
+    "named": false
   },
   {
     "type": "dialogue_line",
@@ -135,7 +300,7 @@
     "named": true
   },
   {
-    "type": "{---",
-    "named": false
+    "type": "name",
+    "named": true
   }
 ]

@@ -12,24 +12,33 @@ module.exports = grammar({
 
 
   rules: {
-    source_file: ($) => repeat($.scene),
-    scene: ($) => seq("{---", "\n", repeat1(seq($.block, repeat("\n"))), "---}", "\n"),
+    source_file: ($) => repeat(seq($.scene)),
+    // scene: ($) => seq($.slug, repeat1("\n"), repeat1(seq($.block, repeat("\n"))), $.transition, repeat1("\n")),
+    // scene: ($) => seq("{", repeat1("\n"), repeat1(seq($.block, repeat("\n"))), "}", repeat1("\n")),
+    scene: ($) => seq($.slug, repeat1(seq($.block, repeat("\n"))), $.transition, repeat1("\n")),
     block: ($) => choice($.dialogue, $.action),
+    slug: ($) => seq($.int_ext_indicator, " ", $.location, optional(seq(" - ", $.additional_specifier)), " - ", $.time, "\n"),
+    transition: ($) => seq(":", $.transition_name, " TO:", "\n"),
     action: ($) => seq($.line, "\n"),
     dialogue: ($) =>
       seq(
-        $.character_name,
+        $.name,
         "\n",
         optional(seq($.dialogue_paranthesis, "\n")),
         $.dialogue_line,
         "\n"
       ),
-    character_name: () => /[A-Z \.]+/,
+    name: $ => /[A-Z][A-Z \.']*[A-Z]/,
     dialogue_paranthesis: ($) => seq("(", $.identifier, ")"),
     dialogue_line: () => /[^(\n][^\n]*[^)\n]/,
     string: () => /"[^"]*"/,
-    line: () => /[^\n]+/,
+    line: $ => /[^\n:][^\n]*[^\n:]/,
     identifier: () => /[a-z]+/,
+    int_ext_indicator: () => choice("INT.", "EXT.", "INT./EXT."),
+    location: ($) => $.name,
+    time: ($) => choice("DAY", "NIGHT", "MORNING", "AFTERNOON", "EVENING", "DUSK", "DAWN", "LATE NIGHT", "MIDNIGHT", "NOON"),
+    additional_specifier: ($) => $.name,
+    transition_name: ($) => $.name,
   },
 });
 

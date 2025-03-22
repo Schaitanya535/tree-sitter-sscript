@@ -5,20 +5,21 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "scene"
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "scene"
+          }
+        ]
       }
     },
     "scene": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "{---"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
+          "type": "SYMBOL",
+          "name": "slug"
         },
         {
           "type": "REPEAT1",
@@ -40,12 +41,15 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "---}"
+          "type": "SYMBOL",
+          "name": "transition"
         },
         {
-          "type": "STRING",
-          "value": "\n"
+          "type": "REPEAT1",
+          "content": {
+            "type": "STRING",
+            "value": "\n"
+          }
         }
       ]
     },
@@ -59,6 +63,77 @@
         {
           "type": "SYMBOL",
           "name": "action"
+        }
+      ]
+    },
+    "slug": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "int_ext_indicator"
+        },
+        {
+          "type": "STRING",
+          "value": " "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "location"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": " - "
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "additional_specifier"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": " - "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "time"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "transition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "transition_name"
+        },
+        {
+          "type": "STRING",
+          "value": " TO:"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
         }
       ]
     },
@@ -80,7 +155,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "character_name"
+          "name": "name"
         },
         {
           "type": "STRING",
@@ -117,9 +192,9 @@
         }
       ]
     },
-    "character_name": {
+    "name": {
       "type": "PATTERN",
-      "value": "[A-Z \\.]+"
+      "value": "[A-Z][A-Z \\.']*[A-Z]"
     },
     "dialogue_paranthesis": {
       "type": "SEQ",
@@ -148,11 +223,85 @@
     },
     "line": {
       "type": "PATTERN",
-      "value": "[^\\n]+"
+      "value": "[^\\n:][^\\n]*[^\\n:]"
     },
     "identifier": {
       "type": "PATTERN",
       "value": "[a-z]+"
+    },
+    "int_ext_indicator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "INT."
+        },
+        {
+          "type": "STRING",
+          "value": "EXT."
+        },
+        {
+          "type": "STRING",
+          "value": "INT./EXT."
+        }
+      ]
+    },
+    "location": {
+      "type": "SYMBOL",
+      "name": "name"
+    },
+    "time": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "DAY"
+        },
+        {
+          "type": "STRING",
+          "value": "NIGHT"
+        },
+        {
+          "type": "STRING",
+          "value": "MORNING"
+        },
+        {
+          "type": "STRING",
+          "value": "AFTERNOON"
+        },
+        {
+          "type": "STRING",
+          "value": "EVENING"
+        },
+        {
+          "type": "STRING",
+          "value": "DUSK"
+        },
+        {
+          "type": "STRING",
+          "value": "DAWN"
+        },
+        {
+          "type": "STRING",
+          "value": "LATE NIGHT"
+        },
+        {
+          "type": "STRING",
+          "value": "MIDNIGHT"
+        },
+        {
+          "type": "STRING",
+          "value": "NOON"
+        }
+      ]
+    },
+    "additional_specifier": {
+      "type": "SYMBOL",
+      "name": "name"
+    },
+    "transition_name": {
+      "type": "SYMBOL",
+      "name": "name"
     }
   },
   "extras": [
