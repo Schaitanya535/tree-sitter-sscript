@@ -70,7 +70,7 @@
       "required": true,
       "types": [
         {
-          "type": "string",
+          "type": "line",
           "named": true
         }
       ]
@@ -144,10 +144,6 @@
   },
   {
     "type": "line",
-    "named": true
-  },
-  {
-    "type": "string",
     "named": true
   },
   {

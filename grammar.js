@@ -24,7 +24,7 @@ module.exports = grammar({
       ),
     character_name: ($) => seq(/[A-Z \.]+/, "\n"),
     dialogue_paranthesis: ($) => seq("(", $.identifier, ")", "\n"),
-    dialogue_line: ($) => seq($.string, "\n"),
+    dialogue_line: ($) => seq($.line, "\n"),
     string: ($) => /"[^"]*"/,
     line: ($) => /[^\n]+/,
     identifier: ($) => /[a-z]+/,
