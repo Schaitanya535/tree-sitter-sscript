@@ -83,11 +83,24 @@
           "name": "character_name"
         },
         {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "dialogue_paranthesis"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "dialogue_paranthesis"
+                },
+                {
+                  "type": "STRING",
+                  "value": "\n"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -97,6 +110,10 @@
         {
           "type": "SYMBOL",
           "name": "dialogue_line"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
         }
       ]
     },
@@ -106,10 +123,6 @@
         {
           "type": "PATTERN",
           "value": "[A-Z \\.]+"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
         }
       ]
     },
@@ -127,25 +140,12 @@
         {
           "type": "STRING",
           "value": ")"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
         }
       ]
     },
     "dialogue_line": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "line"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
-        }
-      ]
+      "type": "SYMBOL",
+      "name": "line"
     },
     "string": {
       "type": "PATTERN",
