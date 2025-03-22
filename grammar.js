@@ -13,10 +13,10 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) => repeat($.scene),
-    scene: ($) => seq("{---", "\n", repeat1(seq($.block, repeat("\n"))), "---}"),
-    block: ($) => choice($.slug, $.transition, $.dialogue, $.action),
+    scene: ($) => seq($.slug, repeat("\n"), repeat1(seq($.block, repeat("\n"))), $.transition),
+    block: ($) => choice($.dialogue, $.action),
     slug: ($) => seq(":: ", $.int_ext_indicator, " ", $.location, optional(seq(" - ", $.additional_specifier)), " - ", $.time, "\n"),
-    transition: ($) => seq(":", $.transition_name, ":", "\n"),
+    transition: ($) => seq(":: ", $.transition_name, ":", "\n"),
     action: ($) => seq($.line, "\n"),
     dialogue: ($) =>
       seq(

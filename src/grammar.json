@@ -13,12 +13,15 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "{---"
+          "type": "SYMBOL",
+          "name": "slug"
         },
         {
-          "type": "STRING",
-          "value": "\n"
+          "type": "REPEAT",
+          "content": {
+            "type": "STRING",
+            "value": "\n"
+          }
         },
         {
           "type": "REPEAT1",
@@ -40,22 +43,14 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "---}"
+          "type": "SYMBOL",
+          "name": "transition"
         }
       ]
     },
     "block": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "slug"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "transition"
-        },
         {
           "type": "SYMBOL",
           "name": "dialogue"
@@ -125,7 +120,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": ":"
+          "value": "::"
         },
         {
           "type": "SYMBOL",
