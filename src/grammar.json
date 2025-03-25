@@ -154,7 +154,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "name"
+          "name": "character_name"
         },
         {
           "type": "STRING",
@@ -190,6 +190,10 @@
           "value": "\n"
         }
       ]
+    },
+    "character_name": {
+      "type": "SYMBOL",
+      "name": "name"
     },
     "name": {
       "type": "PATTERN",

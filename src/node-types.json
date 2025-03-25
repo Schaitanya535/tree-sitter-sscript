@@ -49,6 +49,21 @@
     }
   },
   {
+    "type": "character_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "dialogue",
     "named": true,
     "fields": {},
@@ -57,15 +72,15 @@
       "required": true,
       "types": [
         {
+          "type": "character_name",
+          "named": true
+        },
+        {
           "type": "dialogue_line",
           "named": true
         },
         {
           "type": "dialogue_paranthesis",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         }
       ]

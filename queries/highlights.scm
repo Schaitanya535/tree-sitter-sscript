@@ -1,6 +1,7 @@
 
+(slug) @type
 ; Highlight character names
-(name) @constant
+(character_name) @constant
 
 ; Highlight dialogue
 (dialogue_line) @string
