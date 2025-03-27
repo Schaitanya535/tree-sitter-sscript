@@ -153,41 +153,28 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "character_name"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
-          "type": "CHOICE",
+          "type": "SEQ",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "dialogue_paranthesis"
-                },
-                {
-                  "type": "STRING",
-                  "value": "\n"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "character_name"
             },
             {
-              "type": "BLANK"
+              "type": "STRING",
+              "value": "\n"
             }
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "dialogue_line"
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "dialogue_line"
+          }
         },
         {
           "type": "STRING",
-          "value": "\n"
+          "value": "\n\n"
         }
       ]
     },
@@ -197,7 +184,24 @@
     },
     "name": {
       "type": "PATTERN",
-      "value": "[A-Z][A-Z \\.']*[A-Z]"
+      "value": "[A-Z][A-Z \\.'(]*[A-Z)]"
+    },
+    "dialogue_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "O.S."
+        },
+        {
+          "type": "STRING",
+          "value": "CONT'D"
+        },
+        {
+          "type": "STRING",
+          "value": "MORE"
+        }
+      ]
     },
     "dialogue_paranthesis": {
       "type": "SEQ",
@@ -218,7 +222,7 @@
     },
     "dialogue_line": {
       "type": "PATTERN",
-      "value": "[^(\\n][^\\n]*[^)\\n]"
+      "value": "[^\\n]*"
     },
     "string": {
       "type": "PATTERN",

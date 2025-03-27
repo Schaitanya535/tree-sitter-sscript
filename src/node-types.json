@@ -78,25 +78,6 @@
         {
           "type": "dialogue_line",
           "named": true
-        },
-        {
-          "type": "dialogue_paranthesis",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "dialogue_paranthesis",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
         }
       ]
     }
@@ -227,19 +208,15 @@
     "named": false
   },
   {
+    "type": "\n\n",
+    "named": false
+  },
+  {
     "type": " ",
     "named": false
   },
   {
     "type": " - ",
-    "named": false
-  },
-  {
-    "type": "(",
-    "named": false
-  },
-  {
-    "type": ")",
     "named": false
   },
   {
@@ -304,10 +281,6 @@
   },
   {
     "type": "dialogue_line",
-    "named": true
-  },
-  {
-    "type": "identifier",
     "named": true
   },
   {

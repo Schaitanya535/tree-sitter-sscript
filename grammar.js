@@ -20,16 +20,19 @@ module.exports = grammar({
     action: ($) => seq($.line, "\n"),
     dialogue: ($) =>
       seq(
-        $.character_name,
-        "\n",
-        optional(seq($.dialogue_paranthesis, "\n")),
-        $.dialogue_line,
-        "\n"
+        // seq($.character_name, optional(seq(" ", "(", $.dialogue_type, ")")), "\n"),
+        seq($.character_name, "\n"),
+        repeat(
+          $.dialogue_line
+        ),
+        "\n\n"
       ),
+
     character_name: ($) => $.name,
-    name: $ => /[A-Z][A-Z \.']*[A-Z]/,
+    name: $ => /[A-Z][A-Z \.'(]*[A-Z)]/,
+    dialogue_type: () => choice("O.S.", "CONT'D", "MORE"),
     dialogue_paranthesis: ($) => seq("(", $.identifier, ")"),
-    dialogue_line: () => /[^(\n][^\n]*[^)\n]/,
+    dialogue_line: () => /[^\n]*/,
     string: () => /"[^"]*"/,
     line: $ => /[^\n:][^\n]*[^\n:]/,
     identifier: () => /[a-z]+/,
