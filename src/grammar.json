@@ -5,9 +5,220 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "scene"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "scene"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "chapter"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "character"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "location"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "lore"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "extras"
+          }
+        ]
       }
+    },
+    "chapter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "chapter_title"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "paragraph"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_section"
+        }
+      ]
+    },
+    "chapter_title": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":: CHAPTER - "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "int"
+        },
+        {
+          "type": "STRING",
+          "value": ": "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "\n\n"
+        }
+      ]
+    },
+    "paragraph": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "line"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "end_section": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":::"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "int": {
+      "type": "PATTERN",
+      "value": "[0-9]+"
+    },
+    "character": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "character_title"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "paragraph"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_section"
+        }
+      ]
+    },
+    "character_title": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":: CHARACTER : "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "\n\n"
+        }
+      ]
+    },
+    "location": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "location_title"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "paragraph"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_section"
+        }
+      ]
+    },
+    "location_title": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":: LOCATION : "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "\n\n"
+        }
+      ]
+    },
+    "lore": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "lore_title"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "paragraph"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_section"
+        }
+      ]
+    },
+    "lore_title": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":: LORE : "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "\n\n"
+        }
+      ]
     },
     "scene": {
       "type": "SEQ",
@@ -78,7 +289,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "location"
+          "name": "slug_location"
         },
         {
           "type": "CHOICE",
@@ -253,7 +464,7 @@
         }
       ]
     },
-    "location": {
+    "slug_location": {
       "type": "SYMBOL",
       "name": "name"
     },
