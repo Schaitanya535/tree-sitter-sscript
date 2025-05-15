@@ -16,6 +16,11 @@ NeoVim ships treesiter playout in it by default.
 
 We can use *INSPECTTREE* command to see the tree sitter tree of the current buffer.
 
+WE can then go on to the node and then do "o" to write queries
+
+Queries look like this
+| (character_title (name) @name (#eq? @name {})) @character_title
+
 ---
 
 ## How to use it?
