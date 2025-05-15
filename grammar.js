@@ -13,7 +13,7 @@ module.exports = grammar({
 
   rules: {
 
-    source_file: ($) => repeat(choice($.scene, $.chapter, $.character, $.location, $.lore, $.extras)),
+    source_file: ($) => repeat(choice($.scene, $.chapter, $.character, $.location, $.lore)),
 
     // chapters
     // chapter has a title and paragraphs and start with :: CHAPTER -1 <chapter_title> and end with ::: 
@@ -73,8 +73,8 @@ module.exports = grammar({
     transition_name: ($) => $.name,
 
     //extras
-    extras: ($) => seq(/\s/, $.comment),
-    comment: () => /#.*/,
+    // extras: ($) => seq(/\s/, $.comment),
+    // comment: () => /#.*/,
   },
 });
 

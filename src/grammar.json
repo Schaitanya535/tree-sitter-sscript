@@ -26,10 +26,6 @@
           {
             "type": "SYMBOL",
             "name": "lore"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "extras"
           }
         ]
       }
@@ -520,23 +516,6 @@
     "transition_name": {
       "type": "SYMBOL",
       "name": "name"
-    },
-    "extras": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "PATTERN",
-          "value": "\\s"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "comment"
-        }
-      ]
-    },
-    "comment": {
-      "type": "PATTERN",
-      "value": "#.*"
     }
   },
   "extras": [

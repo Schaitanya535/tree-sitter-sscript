@@ -168,21 +168,6 @@
     "fields": {}
   },
   {
-    "type": "extras",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "int_ext_indicator",
     "named": true,
     "fields": {}
@@ -361,10 +346,6 @@
           "named": true
         },
         {
-          "type": "extras",
-          "named": true
-        },
-        {
           "type": "location",
           "named": true
         },
@@ -513,10 +494,6 @@
   {
     "type": "NOON",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true
   },
   {
     "type": "dialogue_line",
