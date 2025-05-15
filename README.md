@@ -1,12 +1,15 @@
-# Tree sitter.
+# Tree sitter
 
 ## What is it?
 
-Tree sitter is a parser generator tool and an incremental parsing library. It can be used to parse source code in a custom language.
+Tree sitter is a parser generator tool and an incremental parsing library. It
+can be used to parse source code in a custom language.
 
-Thanks to it, you can create a parser for a custom language and use it to parse the source code of that language.
+Thanks to it, you can create a parser for a custom language and use it to parse
+the source code of that language.
 
-Thanks to this, we are able to get nice syntax highlighting, code folding, code navigation, and other features in our text editor.
+Thanks to this, we are able to get nice syntax highlighting, code folding, code
+navigation, and other features in our text editor.
 
 ---
 
@@ -28,4 +31,5 @@ Queries look like this
 
 ## How to use it?
 
-This is a simple tree sitter implementation for the a custom language that I am planning to create.
+This is a simple tree sitter implementation for the a custom language that I am
+planning to create.
